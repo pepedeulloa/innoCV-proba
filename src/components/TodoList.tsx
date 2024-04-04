@@ -42,7 +42,7 @@ const TodoList: React.FC = () => {
   // Define los estilos en variables
   const containerStyle = {
     display: "flex",
-    'flex-direction': "column",
+    flexDirection: "column",
     justifyContent: "center",
     margin: "10rem"
   };
@@ -54,8 +54,7 @@ const TodoList: React.FC = () => {
     padding: "0",
     border: "1px solid grey",
     borderRadius: "3px",
-
-    "text-indent": "1rem"
+    textIndent: "1rem"
   };
 
   const buttonStyle = {

@@ -17,7 +17,7 @@ const Header = () => {
 
 	const togglerContainerStyles = {
 		display: "flex",
-		'flex-direction': "column",
+		flexDirection: "column",
 		gap: "0.5rem",
 		alignItems: "center"
 	}

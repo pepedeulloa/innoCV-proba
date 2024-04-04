@@ -6,12 +6,12 @@ import Header from './components/Header.tsx';
 function App() {
 
   return (
-    <div className="App" style={{display:'flex', flexDirection:"column"}}>
       <ThemeProvider>
-        <Header></Header>
-        <TodoList></TodoList>
+        <div className="App" style={{display:'flex', flexDirection:"column"}}>
+          <Header></Header>
+          <TodoList></TodoList>
+        </div>
       </ThemeProvider>
-    </div>
   );
 }
 
