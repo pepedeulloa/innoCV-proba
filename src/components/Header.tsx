@@ -15,26 +15,23 @@ const Header = () => {
 		fontWeight:"bold",
 	}
 
-	const togglerContainerStyles = {
-		display: "flex",
-		flexDirection: "column",
-		gap: "0.5rem",
-		alignItems: "center"
-	}
+	const buttonStyle = {
+		alignSelf: "center",
+		fontSize:"1.5rem",
+		backgroundColor:"lightseagreen",
+		borderRadius: "100%",
+};
 
 		return (
 			<header style={headerStyle}>
 				<div>
-					<h2>
-						Prueba técnica
-					</h2>
+					<h1>
+						Prueba técnica INNOCV
+					</h1>
 				</div>
-				<div style={togglerContainerStyles}>
-					<p>Current theme: {theme}</p>
-					<button style={{width:"100%"}} onClick={toggleTheme}>
-							Toggle
-					</button>
-				</div>
+				<button style={buttonStyle} onClick={toggleTheme}>
+						{theme==='light' ? '🌞' : '🌜'}
+				</button>
 			</header>
 		)
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { useTheme } from '../contexts/ThemeProvider.tsx';
 
 interface Task {
   id: number;
@@ -11,7 +11,7 @@ interface Task {
 const TodoList: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState('');
-
+  const { theme } = useTheme();
 
   const addTask = () => {
     if (newTask.trim() === "") return; 
@@ -68,7 +68,7 @@ const TodoList: React.FC = () => {
 
   const listStyle = {
     display: "flex",
-    'flex-direction': "column",
+    flexDirection: "column",
     gap:"0.75rem",
     width: "100%",
     marginBlock: 0,
@@ -79,19 +79,18 @@ const TodoList: React.FC = () => {
   const listItemStyle = {
     height: "2.25rem",
     width: "100%",
-    fontSize: "1rem",
     color: "white",
     listStyle: "none",
-    "font-size": "1.5rem",
-    "text-indent": "1rem",
+    fontSize: "1.5rem",
+    textIndent: "1rem",
     padding: "0",
+    borderRadius: "3px",
   };
 
   return (
     <div style={containerStyle}>
-      <h1>
-        Task list
-      </h1>
+      <h2>Task list</h2>
+      <p style={{fontSize:"1.15rem"}}>Current theme: {theme}</p>
       <input style={inputStyle} placeholder='Write here your task' type="text" value={newTask} onChange={handleInputChange} />
       <button style={{...buttonStyle, opacity: isInputEmpty ? 0.75 : 1, cursor: isInputEmpty ? "not-allowed": "pointer" }} disabled={isInputEmpty} onClick={addTask}>Add Task</button>
       <br />
